@@ -1,0 +1,46 @@
+<ion-view view-title="概述">
+    <ion-content>
+        <div class="user-profile" style="width:100%; height:auto;background-color:#fff;float:left;">
+            <img src="images/cover.jpg">
+            <div class="avatar">
+                <!--<img src="images/ionic.png" class="profile-pic">-->
+                <img ng-src="{{userProfile.avatar}}" class="profile-pic">
+                <ul>
+                    <li>
+                        <!--<p class="text-white text-center" style="margin-top:-15%;margin-bottom:10%;display:block;">-->
+                            <!--@ionsnap, 6 Pictures-->
+                        <!--</p>-->
+                        <p class="text-white text-center" style="margin-top:-15%;margin-bottom:10%;display:block;">
+                            {{userProfile.username}},
+                            {{userProfile.imageCount}} Pictures
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <ul class="profile" style="margin-left:5%;">
+            <li ng-repeat="image in images" class="profile">
+                <a href="#"><img ng-src="{{image.url}}"></a>
+            </li>
+            <!--<li class="profile">-->
+                <!--<a href="#"><img src="images/placehold_100x100.png"></a>-->
+            <!--</li>-->
+            <!--<li class="profile" style="list-style-type: none;">-->
+                <!--<a href="#"><img src="images/placehold_100x100.png"></a>-->
+            <!--</li>-->
+            <!--<li class="profile" style="list-style-type: none;">-->
+                <!--<a href="#"><img src="images/placehold_100x100.png"></a>-->
+            <!--</li>-->
+            <!--<li class="profile" style="list-style-type: none;">-->
+                <!--<a href="#"><img src="images/placehold_100x100.png"></a>-->
+            <!--</li>-->
+            <!--<li class="profile" style="list-style-type: none;">-->
+                <!--<a href="#"><img src="images/placehold_100x100.png"></a>-->
+            <!--</li>-->
+            <!--<li class="profile" style="list-style-type: none;">-->
+                <!--<a href="#"><img src="images/placehold_100x100.png"></a>-->
+            <!--</li>-->
+        </ul>
+    </ion-content>
+</ion-view>

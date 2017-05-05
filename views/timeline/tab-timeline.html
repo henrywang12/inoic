@@ -1,0 +1,44 @@
+<ion-view view-title="时间线">
+    <ion-content class="has-header">
+        <!--下拉刷新-->
+        <ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()" spinner="bubbles">
+        </ion-refresher>
+        <div ng-repeat="post in posts" class="list card">
+            <div class="item item-avatar">
+                <!--<img src="images/placehold_50x50.png"/>-->
+                <!--<h2>Some Title</h2>-->
+                <!--<p>1955年10月5日</p>-->
+                <img ng-src="{{post.image}}"/>
+                <h2>{{post.title}}</h2>
+                <p>{{post.date}}</p>
+            </div>
+            <div class="item item-body">
+                <!--<img src="images/placehold_500x500.png"/>-->
+                <!--<p>-->
+                    <!--<a href="#" class="subdued">1 喜欢</a>-->
+                    <!--<a href="#" class="subdued">5 评论</a>-->
+                <!--</p>-->
+                <img class="full-image" ng-src="{{post.image}}">
+                <p>
+                    <a href="#" class="subdued">{{post.like}} 喜欢</a>
+                    <a href="#" class="subdued">{{post.comment}} 评论</a>
+                </p>
+            </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" href="#">
+                    <i class="icon ion-heart"></i> 喜欢
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i> 评论
+                </a>
+                <a class="tab-item" href="#">
+                    <i class="icon ion-share"></i> 分享
+                </a>
+            </div>
+        </div>
+
+        <!--无限滚动-->
+        <ion-infinite-scroll on-infinite="loadMore()" distance="1%" spinner="spiral">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>
