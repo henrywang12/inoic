@@ -3,7 +3,7 @@
  */
 angular.module('myapp').controller("descCtrl",function($scope){
     $scope.userProfile = {
-        username: '@火星时代',
+        username: 'wangjun',
         avatar: 'images/ionic.png',
         imageCount: 6
     };
